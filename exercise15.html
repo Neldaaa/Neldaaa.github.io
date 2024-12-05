@@ -1,99 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Layout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+    }
+
+    body {
       font-family: Arial, sans-serif;
+      background-color: white; 
     }
 
     .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 10px;
     }
 
     .header {
-      background-color: limegreen;
+      background-color: #9ACD32;
       width: 100%;
-      text-align: center;
-      padding: 20px;
-      color: white;
+      height: 150px;
+      margin-bottom: 10px;
     }
 
-    .main-content {
+    .content {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      width: 100%;
       gap: 10px;
-      padding: 10px;
-      background-color: lightblue;
+      margin-bottom: 10px;
     }
 
-    .content-1, .content-2, .content-3 {
-      background-color: teal;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      flex: 1 1 calc(33.333% - 20px);
-      box-sizing: border-box;
+    .box {
+      background-color: #00FFFF;
+      flex: 1 1 100%;
+      height: 200px; 
     }
 
     .footer {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-evenly;
-      width: 100%;
-      padding: 10px;
+      gap: 10px;
+    }
+
+    .footer-box {
       background-color: lightgray;
+      height: 100px; 
+      flex: 1 1 48%;
     }
 
-    .footer-1, .footer-2, .footer-3 {
-      background-color: white;
-      text-align: center;
-      padding: 20px;
-      flex: 1 1 calc(33.333% - 20px);
-      box-sizing: border-box;
-      margin: 5px;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 480px) {
-      .main-content {
-        flex-direction: column;
+    @media screen and (min-width: 481px) {
+      .content .box {
+        flex: 1 1 31%; 
       }
 
-      .content-1, .content-2, .content-3 {
-        flex: 1 1 100%;
-      }
-
-      .footer {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .footer-1, .footer-2, .footer-3 {
-        flex: 1 1 100%;
+      .footer-box {
+        flex: 1 1 23%; 
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="header">Header</div>
-    <div class="main-content">
-      <div class="content-1">Content 1</div>
-      <div class="content-2">Content 2</div>
-      <div class="content-3">Content 3</div>
+  
+    <div class="header"></div>
+
+    <div class="content">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
     </div>
+
     <div class="footer">
-      <div class="footer-1">Footer 1</div>
-      <div class="footer-2">Footer 2</div>
-      <div class="footer-3">Footer 3</div>
+      <div class="footer-box"></div>
+      <div class="footer-box"></div>
+      <div class="footer-box"></div>
+      <div class="footer-box"></div>
     </div>
   </div>
 </body>
